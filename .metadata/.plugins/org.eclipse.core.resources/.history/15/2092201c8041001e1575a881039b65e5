@@ -1,0 +1,17 @@
+quarkus.http.port=7878
+
+# Datasource Configuration
+%dev.quarkus.datasource.jdbc.url=jdbc:mysql://localhost:3306/hdfc
+%dev.quarkus.datasource.username=root
+%dev.quarkus.datasource.password=rootroot
+
+
+
+# Hibernate Configuration
+quarkus.hibernate-orm.database.generation=update
+quarkus.hibernate-orm.log.sql=true
+quarkus.hibernate-orm.log.jpa=true
+
+%test.quarkus.datasource.db-kind=h2
+%test.quarkus.datasource.jdbc.url=jdbc:h2:mem:customer
+

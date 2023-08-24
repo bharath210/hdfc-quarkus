@@ -1,0 +1,31 @@
+package com.hdfc.quarkus.service;
+
+import java.util.List;
+
+import com.hdfc.quarkus.entity.EducationDetail;
+
+import jakarta.enterprise.context.ApplicationScoped;
+
+@ApplicationScoped
+public class EducationDetailServiceImpl implements IEducationDetailService {
+
+	@Override
+	public EducationDetail addEducationDetails(EducationDetail educationDetail) {
+		// TODO Auto-generated method stub
+		educationDetail.persist();
+		return educationDetail;
+	}
+
+	@Override
+	public EducationDetail getEducationDetailsById(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<EducationDetail> fetchEducationDetailsByCustomerId(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

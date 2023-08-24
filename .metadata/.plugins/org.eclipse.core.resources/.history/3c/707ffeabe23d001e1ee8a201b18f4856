@@ -1,0 +1,13 @@
+package com.hdfc.quarkus.service;
+
+import com.hdfc.quarkus.entity.Customer;
+
+import jakarta.enterprise.context.ApplicationScoped;
+
+@ApplicationScoped
+public interface ICustomerService {
+	
+	public Customer addCustomer(Customer customer);
+	public long fetchCustomerById(long id);
+
+}

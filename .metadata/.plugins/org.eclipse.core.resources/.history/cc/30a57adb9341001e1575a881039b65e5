@@ -1,0 +1,7 @@
+show databases;
+
+use hdfc_db;
+
+show tables;
+
+SELECT * FROM Customer;

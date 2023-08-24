@@ -1,0 +1,19 @@
+package com.hdfc.quarkus.entity;
+
+import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import jakarta.persistence.Entity;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Entity
+public class Address extends PanacheEntity{
+	
+	private String city;
+	private String State;
+	private String pinCode;
+
+}

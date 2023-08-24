@@ -1,0 +1,24 @@
+package com.hdfc.quarkus.controller;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class CustomerControllerTest {
+
+	@Test
+	void testAddCustomer() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testGetCustomer() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testGetAllCustomers() {
+		fail("Not yet implemented");
+	}
+
+}

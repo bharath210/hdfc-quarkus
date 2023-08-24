@@ -1,0 +1,45 @@
+package com.hdfc.quarkus.entity;
+
+import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
+public class Customer extends PanacheEntity{
+	
+	
+	private long id;
+	private String name;
+	private long age;
+	public Customer(long id, String name, long age) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.age = age;
+	}
+	public Customer() {
+		super();
+	}
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public long getAge() {
+		return age;
+	}
+	public void setAge(long age) {
+		this.age = age;
+	}
+	
+	
+
+
+}

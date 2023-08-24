@@ -1,0 +1,5 @@
+quarkus.http.port=4545
+
+quarkus.datasource.jdbc.url=jdbc:mysql://localhost:3306/hdfc_db
+quarkus.datasource.username=root
+quarkus.datasource.password=rootroot

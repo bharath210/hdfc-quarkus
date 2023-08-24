@@ -1,0 +1,13 @@
+package com.hdfc.quarkus.service;
+
+import java.util.List;
+
+import com.hdfc.quarkus.entity.EducationDetail;
+
+public interface IEducationDetailService {
+	
+	public EducationDetail addEducationDetails(EducationDetail educationDetail);
+//	public EducationDetail getEducationDetailsById(long id);
+//	public List<EducationDetail> fetchEducationDetailsByCustomerId(long id);
+
+}

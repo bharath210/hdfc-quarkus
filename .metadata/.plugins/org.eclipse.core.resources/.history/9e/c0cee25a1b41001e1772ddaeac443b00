@@ -1,0 +1,5 @@
+package com.hdfc.quarkus.entity;
+
+public class EducationDetail {
+
+}

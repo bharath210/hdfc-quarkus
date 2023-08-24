@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.hdfc.quarkus.entity.Customer"/>
+    <fullyQualifiedTypeName name="com.hdfc.quarkus.service.ICustomerService"/>
+    <fullyQualifiedTypeName name="jakarta.ws.rs.Consumes"/>
+    <fullyQualifiedTypeName name="jakarta.ws.rs.Produces"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Entity"/>
+    <fullyQualifiedTypeName name="lombok.Data"/>
+    <fullyQualifiedTypeName name="io.quarkus.test.junit.QuarkusTest"/>
+    <fullyQualifiedTypeName name="net.bytebuddy.NamingStrategy.Suffixing.BaseNameResolver.ForGivenType"/>
+    <fullyQualifiedTypeName name="io.restassured.RestAssured"/>
+    <fullyQualifiedTypeName name="lombok.Getter"/>
+    <fullyQualifiedTypeName name="lombok.Setter"/>
+    <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
+    <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
+    <fullyQualifiedTypeName name="com.hdfc.quarkus.entity.ProfessionalDetail"/>
+    <fullyQualifiedTypeName name="com.hdfc.quarkus.entity.FamilyDetails"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Id"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.FetchType"/>
+    <fullyQualifiedTypeName name="com.hdfc.quarkus.entity.FamilyDetail"/>
+    <fullyQualifiedTypeName name="com.hdfc.quarkus.service.IEducationDetailService"/>
+    <fullyQualifiedTypeName name="com.hdfc.quarkus.entity.EducationDetail"/>
+    <fullyQualifiedTypeName name="jakarta.ws.rs.core.MediaType"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.OneToOne"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.OneToMany"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.CascadeType"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.ManyToOne"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.JoinColumn"/>
+    <fullyQualifiedTypeName name="jakarta.enterprise.context.ApplicationScoped"/>
+    <fullyQualifiedTypeName name="jakarta.transaction.Transactional"/>
+    <fullyQualifiedTypeName name="com.hdfc.quarkus.service.IAccountService"/>
+    <fullyQualifiedTypeName name="jakarta.inject.Inject"/>
+    <fullyQualifiedTypeName name="jakarta.ws.rs.POST"/>
+    <fullyQualifiedTypeName name="jakarta.ws.rs.Path"/>
+    <fullyQualifiedTypeName name="jakarta.ws.rs.GET"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="jakarta.ws.rs.PathParam"/>
+    <fullyQualifiedTypeName name="io.quarkus.hibernate.orm.panache.PanacheEntity"/>
+</qualifiedTypeNameHistroy>

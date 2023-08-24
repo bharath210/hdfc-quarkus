@@ -1,0 +1,11 @@
+show databases;
+
+CREATE database hdfc_db;
+
+use hdfc_db;
+
+show tables;
+
+SELECT * FROM Customer;
+
+SELECT * FROM Address;

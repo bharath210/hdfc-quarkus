@@ -1,0 +1,16 @@
+package com.hdfc.quarkus.entity;
+
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@Entity
+public class ProfessionalDetail {
+	
+	private String occupation;
+	private String employer;
+
+}

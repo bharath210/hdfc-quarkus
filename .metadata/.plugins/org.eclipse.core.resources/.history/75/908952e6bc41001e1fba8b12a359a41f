@@ -1,0 +1,5 @@
+package com.hdfc.quarkus.service;
+
+public interface IEducationDetailService {
+
+}

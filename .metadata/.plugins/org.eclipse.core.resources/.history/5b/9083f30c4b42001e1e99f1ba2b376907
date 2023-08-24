@@ -1,0 +1,5 @@
+package com.hdfc.transaction.entity;
+
+public class Transaction {
+
+}

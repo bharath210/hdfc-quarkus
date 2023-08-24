@@ -1,0 +1,26 @@
+package com.hdfc.quarkus.entity;
+
+import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Entity
+public class Customer extends PanacheEntity{
+	
+	
+	private String name;
+	private long age;
+	@OneToOne
+	private Address address;
+	
+	
+
+
+}
