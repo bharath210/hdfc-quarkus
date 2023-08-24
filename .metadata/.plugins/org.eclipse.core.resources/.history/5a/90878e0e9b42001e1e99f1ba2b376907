@@ -1,0 +1,30 @@
+package com.hdfc.banking.entity;
+
+import com.hdfc.banking.enums.AccountType;
+
+import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@Entity
+public class Account {
+	
+	@Id
+	private long id;
+	private String accNumber;
+	@Enumerated(EnumType.STRING)
+	private AccountType accType;
+	private double balance;
+	private long custId;
+
+}

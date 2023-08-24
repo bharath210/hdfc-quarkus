@@ -1,10 +1,12 @@
 package com.hdfc.banking.entity;
 
+import com.hdfc.banking.enums.AccountType;
+
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,9 +19,11 @@ import lombok.Setter;
 @Entity
 public class Account extends PanacheEntity{
 	
+
 	private String accNumber;
-	private String accType;
-	private String balance;
+	@Enumerated(EnumType.STRING)
+	private AccountType accType;
+	private double balance;
 	private long custId;
 
 }

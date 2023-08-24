@@ -1,13 +1,11 @@
 package com.hdfc.quarkus.entity;
 
 import java.time.LocalDate;
-import java.util.List;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,18 +24,17 @@ public class Customer extends PanacheEntity{
 	private String lastName;
 	private LocalDate dateOfBirth;
 	private String email;
+	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "address_id", nullable = false)
 	private Address address;
+	
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "professionalDetail_id")
+	@JoinColumn(name = "professionalDetail_id", nullable = false)
 	private ProfessionalDetail professionalDetail;
-	@OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
-	private List<EducationDetail> educationDetail;
+	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "familyDetail_id", nullable = false)
 	private FamilyDetail familyDetail;
-	@OneToMany(cascade = CascadeType.ALL)
-	private List<Account> account;
 	
 }

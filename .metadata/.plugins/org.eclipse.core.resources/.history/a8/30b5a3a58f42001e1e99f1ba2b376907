@@ -1,0 +1,40 @@
+package com.hdfc.banking.service;
+
+import java.util.List;
+
+import com.hdfc.banking.entity.Account;
+import com.hdfc.banking.enums.AccountType;
+
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.transaction.Transactional;
+
+@ApplicationScoped
+public class AccountServiceImpl implements IAccountService{
+
+	@Override
+	@Transactional
+	public Account createAccount(Account account) {
+		account.persist();
+		return account;
+	}
+
+	@Override
+	public List<Account> getCustomerAccount(long custId) {
+		
+		return Account.list("custId", custId);
+	}
+
+	@Override
+	public Account updateBalance(long custId, AccountType accType, double balance) {
+		Account account = fetchAccountByCustIdAndAccType(custId, accType);
+		account.setBalance(balance);
+		account.persistAndFlush();
+		return account;
+	}
+
+	@Override
+	public Account fetchAccountByCustIdAndAccType(long custId, AccountType accType) {
+		return Account.find("custId = ?1 and accType ?2", custId, accType).firstResult();
+	}
+
+}

@@ -24,8 +24,8 @@ public class AccountController {
 	
 	@POST
 	@Path("/add")
-	public Account add(Account account) {
-		return accountService.addAccount(account);
+	public Account create(Account account) {
+		return accountService.createAccount(account);
 	}
 	
 	@GET

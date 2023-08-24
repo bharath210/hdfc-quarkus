@@ -12,6 +12,7 @@ import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 
 @Path("/api/transaction")
 @Consumes(MediaType.APPLICATION_JSON)
@@ -23,7 +24,7 @@ public class TransactionController {
 	
 	@POST
 	@Path("/add")
-	public Transaction addTransaction(Transaction transaction) {
+	public Response addTransaction(Transaction transaction) {
 		return transactionService.addTransaction(transaction);
 	}
 	

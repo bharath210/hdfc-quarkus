@@ -9,18 +9,29 @@ import jakarta.transaction.Transactional;
 
 @ApplicationScoped
 public class AccountServiceImpl implements IAccountService{
-
+	
+	
 	@Override
 	@Transactional
-	public Account addAccount(Account account) {
-		account.persist();
+	public Account createAccount(Account account) {
+		Account.persist(account);
 		return account;
 	}
 
 	@Override
 	public List<Account> getCustomerAccount(long custId) {
-		// TODO Auto-generated method stub
-		return Account.list("customer.id", custId);
+		
+		return Account.list("custId", custId);
 	}
+
+	@Override
+	@Transactional
+	public Account updateBalance(String accNum, double balance) {
+		Account account = Account.find("accNumber", accNum).firstResult();
+		account.setBalance(balance);
+		account.persistAndFlush();
+		return account;
+	}
+
 
 }

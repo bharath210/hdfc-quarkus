@@ -1,7 +1,11 @@
 package com.hdfc.banking.entity;
 
+import com.hdfc.banking.enums.TransactionType;
+
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,8 +19,9 @@ import lombok.Setter;
 public class Transaction extends PanacheEntity{
 	
 	private String txNum;
-	private String txType;
+	@Enumerated(EnumType.STRING)
+	private TransactionType txType;
 	private long amount;
-	private long custId;
+	private String accNumber;
 
 }
