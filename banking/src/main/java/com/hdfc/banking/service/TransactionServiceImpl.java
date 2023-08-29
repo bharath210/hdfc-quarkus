@@ -5,6 +5,7 @@ import java.util.List;
 import com.hdfc.banking.entity.Account;
 import com.hdfc.banking.entity.Transaction;
 import com.hdfc.banking.enums.TransactionType;
+import com.hdfc.banking.vo.TransactionVO;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
@@ -14,8 +15,10 @@ import jakarta.ws.rs.core.Response;
 @ApplicationScoped
 public class TransactionServiceImpl implements ITransactionService {
 	
+	
 	@Inject
 	IAccountService accountService;
+	
 
 
 	@Override
@@ -31,9 +34,18 @@ public class TransactionServiceImpl implements ITransactionService {
 				return Response.status(Response.Status.BAD_REQUEST).entity("Not enough balance to withdraw amount").build();
 			}
 		}
-		accountService.updateBalance(transaction.getAccNumber(), bal);
+		transaction.setCustId(account.getCustId());
+		account.setBalance(bal);
+		account.persistAndFlush();
 		transaction.persist();
-		return Response.status(Response.Status.OK).entity(transaction).build();
+		TransactionVO transactionVO = new TransactionVO();
+		transactionVO.setId(transaction.id);
+		transactionVO.setAmount(transaction.getAmount());
+		transactionVO.setTxNum(transaction.getTxNum());
+		transactionVO.setTxType(transaction.getTxType());
+		
+		transactionVO.setAccount(accountService.getAccountById(account.id));
+		return Response.status(Response.Status.OK).entity(transactionVO).build();
 	}
 
 	@Override

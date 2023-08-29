@@ -1,0 +1,13 @@
+PS D:\Bharath\HDFC_Capstone> minikube start
+PS D:\Bharath\HDFC_Capstone> docker images
+PS D:\Bharath\HDFC_Capstone> kubectl create deployment mydeployment --image=bharath210/demo-project:latest
+PS D:\Bharath\HDFC_Capstone> kubectl get deployments
+PS D:\Bharath\HDFC_Capstone> kubectl get pods
+PS D:\Bharath\HDFC_Capstone> kubectl logs mydeployment-867476545-mc7c7
+PS D:\Bharath\HDFC_Capstone> kubectl describe deployment mydeployment
+PS D:\Bharath\HDFC_Capstone> kubectl get service
+PS D:\Bharath\HDFC_Capstone> kubectl expose deployment mydeployment --type=NodePort --port=8334
+PS D:\Bharath\HDFC_Capstone> minikube service mydeployment --url
+
+hariprasad@HARIs-MacBook-Air customer-details % ./mvnw package -DskipTests -Dquarkus.container-image.build=true -Dquarkus.package.type=jar -Dquarkus.co
+ntainer-image.tag=2.0

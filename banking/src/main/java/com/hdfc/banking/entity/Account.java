@@ -19,7 +19,6 @@ import lombok.Setter;
 @Entity
 public class Account extends PanacheEntity{
 	
-
 	private String accNumber;
 	@Enumerated(EnumType.STRING)
 	private AccountType accType;

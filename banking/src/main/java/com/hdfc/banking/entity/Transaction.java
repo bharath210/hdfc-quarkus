@@ -23,5 +23,6 @@ public class Transaction extends PanacheEntity{
 	private TransactionType txType;
 	private long amount;
 	private String accNumber;
+	private long custId;
 
 }

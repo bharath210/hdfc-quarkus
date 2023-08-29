@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: customer-details-deployment
+spec:
+  selector:
+    matchLabels:
+      app: customer-details
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: customer-details
+    spec:
+      containers:
+        - name: customer-details-container
+          image: hariprasad/customer-details:4.0
+          ports:
+            - containerPort: 9291
+          env:   # Setting Enviornmental Variables
+            - name: DB_HOST   # Setting Database host address from configMap
+              value: mysql
+
+            - name: DB_NAME  # Setting Database name from configMap
+              value: hdfc_db
+
+            - name: DB_USERNAME  # Setting Database username from Secret
+              value: root
+
+            - name: DB_PASSWORD # Setting Database password from Secret
+              value: rootroot

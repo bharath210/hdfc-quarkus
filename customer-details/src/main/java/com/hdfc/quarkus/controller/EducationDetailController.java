@@ -23,13 +23,12 @@ public class EducationDetailController {
 	IEducationDetailService educationDetailService;
 	
 	@POST
-	@Path("/add")
 	public EducationDetail add(EducationDetail educationDetail) {
 		return educationDetailService.addEducationDetails(educationDetail);
 	}
 	
 	@GET
-	@Path("/get/{id}")
+	@Path("/{id}")
 	public EducationDetail getById(@PathParam("id") Long id) {
 		return educationDetailService.getEducationDetailsById(id);
 	}

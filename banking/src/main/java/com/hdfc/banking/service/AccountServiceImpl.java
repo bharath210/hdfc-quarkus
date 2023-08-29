@@ -2,35 +2,54 @@ package com.hdfc.banking.service;
 
 import java.util.List;
 
+import org.eclipse.microprofile.rest.client.inject.RestClient;
+
 import com.hdfc.banking.entity.Account;
+import com.hdfc.banking.proxy.CustomerProxy;
+import com.hdfc.banking.vo.AccountVO;
+import com.hdfc.banking.vo.CustomerVO;
 
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 
 @ApplicationScoped
 public class AccountServiceImpl implements IAccountService{
 	
+
+	
+	@RestClient
+	@Inject
+	CustomerProxy proxy;
+	
 	
 	@Override
 	@Transactional
-	public Account createAccount(Account account) {
+	public AccountVO createAccount(Account account) {
 		Account.persist(account);
-		return account;
+		CustomerVO customerVO = proxy.getCustomer(account.getCustId());
+		AccountVO accountVO = new AccountVO();
+		accountVO.setId(account.id);
+		accountVO.setAccNumber(account.getAccNumber());
+		accountVO.setAccType(account.getAccType());
+		accountVO.setBalance(account.getBalance());
+		accountVO.setCustomer(customerVO);
+		return accountVO;
 	}
 
-	@Override
-	public List<Account> getCustomerAccount(long custId) {
-		
-		return Account.list("custId", custId);
-	}
 
 	@Override
-	@Transactional
-	public Account updateBalance(String accNum, double balance) {
-		Account account = Account.find("accNumber", accNum).firstResult();
-		account.setBalance(balance);
-		account.persistAndFlush();
-		return account;
+	public AccountVO getAccountById(long id) {
+		Account account = Account.findById(id);
+		CustomerVO customerVO = proxy.getCustomer(account.getCustId());
+		AccountVO accountVO = new AccountVO();
+		accountVO.setId(account.id);
+		accountVO.setAccNumber(account.getAccNumber());
+		accountVO.setAccType(account.getAccType());
+		accountVO.setBalance(account.getBalance());
+		accountVO.setCustomer(customerVO);
+
+		return accountVO;
 	}
 
 

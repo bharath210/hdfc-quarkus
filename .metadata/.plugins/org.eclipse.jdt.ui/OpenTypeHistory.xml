@@ -2,4 +2,5 @@
 <typeInfoHistroy>
     <typeInfo handle="=customer-app/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.hdfc.quarkus.service{ICustomerService.java[ICustomerService" modifiers="513" timestamp="1692772403000"/>
     <typeInfo handle="=customer-details/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.hdfc.quarkus.service{IEducationDetailService.java[IEducationDetailService" modifiers="513" timestamp="1692800826000"/>
+    <typeInfo handle="=banking/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.hdfc.banking.service{ITransactionService.java[ITransactionService" modifiers="513" timestamp="1692889125000"/>
 </typeInfoHistroy>

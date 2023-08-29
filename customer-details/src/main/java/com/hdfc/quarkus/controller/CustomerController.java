@@ -27,31 +27,28 @@ public class CustomerController {
 	ICustomerService customerService;
 	
 	@POST
-	@Path("/add")
 	public Customer addCustomer(Customer customer) {
 		return customerService.createCustomer(customer);
 	}
 	
 	@GET
-	@Path("/get/{id}")
+	@Path("/{id}")
 	public Customer getCustomer(@PathParam("id") long id) throws CustomerNotFoundException {
 		return customerService.fetchCustomerById(id);
 	}
 	
-	@POST
-	@Path("/get/all")
+	@GET
 	public List<Customer> getAllCustomers(){
 		return customerService.fetchAllCustomers();
 	}
 	
 	@PUT
-	@Path("/update")
 	public Customer updateCustomer(Customer customer) {
 		return customerService.updateCustomer(customer);
 	}
 	
 	@DELETE
-	@Path("/delete/{id}")
+	@Path("/{id}")
 	public Response deleteCustomer(@PathParam("id") long id) throws CustomerNotFoundException {
 		return customerService.deleteCustomer(id);
 	}

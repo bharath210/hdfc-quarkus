@@ -23,13 +23,11 @@ public class TransactionController {
 	ITransactionService transactionService;
 	
 	@POST
-	@Path("/add")
 	public Response addTransaction(Transaction transaction) {
 		return transactionService.addTransaction(transaction);
 	}
 	
 	@GET
-	@Path("/getall")
 	public List<Transaction> getAllTransactions(){
 		return transactionService.getAllTransactions();
 	}
