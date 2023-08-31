@@ -6,4 +6,6 @@
 			<item value="org.jboss.tools.quarkus.ui.wizards"/>
 		</list>
 	</section>
+	<section name="BasicNewProjectResourceWizard">
+	</section>
 </section>

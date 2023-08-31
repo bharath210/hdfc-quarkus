@@ -1,6 +1,6 @@
 show databases;
 
-CREATE database hdfc_db;
+CREATE database student_db;
 
 use hdfc_db;
 
@@ -23,3 +23,9 @@ SELECT * FROM `Transaction`;
 DELETE  from Account WHERE id = 2;
 
 DROP database hdfc_db;
+
+use student_db;
+
+show tables;
+
+desc student;

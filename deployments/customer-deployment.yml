@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: customer-details
-  replicas: 3
+  replicas: 1
   template:
     metadata:
       labels:
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: customer-details-container
-          image: hariprasad/customer-details:4.0
+          image: bharath210/customer-details:4.0
           ports:
             - containerPort: 9291
           env:   # Setting Enviornmental Variables
@@ -29,3 +29,8 @@ spec:
 
             - name: DB_PASSWORD # Setting Database password from Secret
               value: rootroot
+          resources: 
+            limits:
+              cpu: "200m"
+            requests: 
+              cpu: "100m"

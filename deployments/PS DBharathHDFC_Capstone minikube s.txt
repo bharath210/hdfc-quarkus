@@ -9,5 +9,6 @@ PS D:\Bharath\HDFC_Capstone> kubectl get service
 PS D:\Bharath\HDFC_Capstone> kubectl expose deployment mydeployment --type=NodePort --port=8334
 PS D:\Bharath\HDFC_Capstone> minikube service mydeployment --url
 
-hariprasad@HARIs-MacBook-Air customer-details % ./mvnw package -DskipTests -Dquarkus.container-image.build=true -Dquarkus.package.type=jar -Dquarkus.co
-ntainer-image.tag=2.0
+hariprasad@HARIs-MacBook-Air customer-details % ./mvnw package -DskipTests -Dquarkus.container-image.build=true -Dquarkus.package.type=jar -Dquarkus.container-image.tag=1.0
+
+kubectl autoscale deployment customer-details-deployment --cpu-percent=50 --min=1 --max=10
